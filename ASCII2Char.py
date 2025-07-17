@@ -1,25 +1,25 @@
-def encode() -> list[int]:
-        encode = "Hello, World!"
+def encode(Plaintext) -> list[int]:
         encoded = []
-        for i in range(len(encode)):
-            encoded.append(ord(encode[i]))
+        for i in range(len(Plaintext)):
+            encoded.append(ord(Plaintext[i]))
         return encoded
 
-def decode() -> str:
-    decode = [72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33]
+def decode(Ciphertext) -> str:
     decoded = ""
-    for i in range(len(decode)):
-        decoded += chr(decode[i])
+    for i in range(len(Ciphertext)):
+        decoded += chr(Ciphertext[i])
     return decoded
 
 def main() -> None:
     while True:
         choice = input("Encode or Decode: ")
         if choice.lower() == "encode":
-            print(encode())
+            Plaintext = "Hello, World!"
+            print(encode(Plaintext))
             break
         if choice.lower() == "decode":
-            print(decode())
+            Ciphertext = [72, 101, 108, 108, 111, 44, 32, 87, 111, 114, 108, 100, 33]
+            print(decode(Ciphertext))
             break
 
 
