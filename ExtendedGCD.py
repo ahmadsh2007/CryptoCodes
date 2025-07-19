@@ -72,6 +72,8 @@ Then we compute each new x, y using the formula above.
 This process is entirely deterministic and leads us to the smallest integer combination of a and b that equals their GCD.
 If a and b are coprime, the result is always 1, and the algorithm will give you values that are inverses of one another \
 modulo a or b, depending on your goal.
+
+DIDN'T UNDERSTAND??? Check: https://youtu.be/6KmhCKxFWOs
 '''
 
 def extendedGCD(a, b):
