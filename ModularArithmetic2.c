@@ -102,7 +102,23 @@ int main(){
 }
 
 uint64_t mod_exp(uint64_t base, uint64_t exponent, uint64_t modulus){
-    __uint128_t  result = 1;
+    /*
+    * NOTE:
+    * This code uses `__uint128_t` for 128-bit multiplication to ensure correctness with large numbers,
+    * especially in cryptographic applications like RSA. This type is supported by GCC on Linux but 
+    * NOT on MinGW (Windows GCC). 
+    *
+    * You can **replace `__uint128_t` with `uint64_t`**, but you're **GAMBLING with correctness**
+    * for large values — overflow may happen silently.
+    *
+    * RECOMMENDED SOLUTIONS if `__uint128_t` fails:
+    *   - Use **WSL** (Windows Subsystem for Linux)
+    *   - Compile on a **Linux** machine or VM
+    *   - Use **GMP** library for big integer support (preferred for professional-grade cryptography)
+    *
+    * Never compromise precision in cryptographic applications.
+    */
+    __uint128_t result = 1;
 
     base %= modulus;
 
