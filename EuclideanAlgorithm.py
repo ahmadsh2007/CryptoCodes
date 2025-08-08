@@ -35,9 +35,9 @@ def main() -> None:
     if a <= 0 or b <= 0:
         print("Please enter positive integers only.")
         return
-    print(GCDRecursive(a, b))
-    return
     print(GCDWhileLoop(a, b))
+    return
+    print(GCDRecursive(a, b))
 
 if __name__ == '__main__':
     main()
